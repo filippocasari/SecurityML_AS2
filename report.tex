@@ -1,0 +1,84 @@
+\documentclass[unicode,11pt,a4paper,oneside,numbers=endperiod,openany]{scrartcl}
+\newcommand\tab[1][0.5cm]{\hspace*{#1}}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{seqsplit}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{listings}
+%New colors defined below
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.98,0.98,0.98}
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour}, commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2,
+  numbers=none
+}
+\lstdefinestyle{base}{
+  language=C,
+  emptylines=1,
+  breaklines=true,
+  basicstyle=\ttfamily\color{black},
+  moredelim=**[is][\color{red}]{@}{@},
+}
+\lstset{style=mystyle}
+\newcommand\MyBox[2]{
+  \fbox{\lower0.75cm
+    \vbox to 1.7cm{\vfil
+      \hbox to 1.7cm{\hfil\parbox{1.4cm}{#1\\#2}\hfil}
+      \vfil}%
+  }%
+}
+\input{assignment.sty}
+
+\usepackage{subcaption}
+
+\begin{document}
+
+
+\setassignment
+
+\serieheader{Security ML}{2023}{Student: Filippo Casari}{}{Report for Assignment 2}{}
+\newline
+\section{Malware Detection}
+
+
+\subsection{Understanding the Data}
+First, I would say that a lot of features are important to detect a malware in an Android application since certain permissions or using some APIs could trigger these features. It seems to me that the dataset is well structured.  \\
+Due to the fact that malicious apps frequently make unusual or suspicious API calls, the API call signatures are crucial characteristics for identifying Android malware. Similar to this, an application's requests for authorization can be a key sign 
+of its potential for malicious behavior. \\
+I am not an expert in Android applications, but ServiceConnector seems a very interesting feature that a malware can exploit. 
+A ServiceConnection object is created when a component binds to a service using the bindService method. This object gets callbacks from the Android system when the connection to the service is made, when it is severed, or when an error occurs. Then, you can interact with the service by calling methods on its interface using the ServiceConnection object.\\
+As I mentioned, since I do not have expertise in this field I cannot suggest other features. As I will explain in the following sections, my models work very well; no extra features are necessary to me indeed.
+Due to its nature, malicious apps may use this service to interact with a hidden or malicious service.
+\subsection{Evaluating Models}
+In this scenario, I would say that it is more impactful a false-negative since if we got a false-positive should not be a problem for our system. In fact, in the worst case scanario, our benign application will be killed by the detector. In contrast, if our detector is not able to detect properly a malicious app, we will allow the program to run anyway without control of its behavior. \\
+
+\subsection{Training Your Models}
+\subsection{Quality of the Dataset}
+\subsection{Bypassing your Model}
+\subsection{Improving your Model}
+\section{Hardware Trojan Detection}
+\end{document}
