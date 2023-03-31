@@ -74,11 +74,142 @@ A ServiceConnection object is created when a component binds to a service using 
 As I mentioned, since I do not have expertise in this field I cannot suggest other features. As I will explain in the following sections, my models work very well; no extra features are necessary to me indeed.
 Due to its nature, malicious apps may use this service to interact with a hidden or malicious service.
 \subsection{Evaluating Models}
-In this scenario, I would say that it is more impactful a false-negative since if we got a false-positive should not be a problem for our system. In fact, in the worst case scanario, our benign application will be killed by the detector. In contrast, if our detector is not able to detect properly a malicious app, we will allow the program to run anyway without control of its behavior. \\
-
+In this scenario,
+ I would say that 
+ it is more impactful 
+ a false-negative since 
+ if we got a false-positive 
+ this should not be a problem for our system.
+ In fact, in the worst case scanario, 
+ a benign application is killed by the detector. 
+ In contrast, if our detector is not able to 
+ detect properly a malicious app, we will allow
+  the malicious program to run anyway without 
+  control of its behavior. \\
+For this task since the class weights are not balanced, I used \textit{balanced accuracy} as evaluation metric. \\
+Class 0 (benign): about 63.04 \%, Class 1 (malware):  about 36.96\%. \\
 \subsection{Training Your Models}
+\subsubsection*{ELBO method}
+Before report the models used, I want to explain what I did before the classification. \\
+Usually, before training the model I implemented a clustering algorithm to see whether the task was difficult for the classification. In particular, I first use ELBO method combined with KMeans to see (without using true labels/y\_true) which value of "k" (hyperparameter of Kmeans) optimizes the clustering between points of the dataset. \\
+It turns out that k=2 is the best k meaning that the task is not tough for binary classification. 
+\begin{figure}[H]
+  \includegraphics[scale=0.6]{images/ELBO.png}
+  \centering
+  \caption{ELBO method}
+  \label{fig:ELBO}
+\end{figure}
+As one can see, both the maximum score and fit time are when k=2. 
+\subsubsection*{PCA}
+Moreover, I decided to use PCA to reduce the dimensionality of the dataset and apply on it the KMeans in order to plot and visualize the data. Furthermore, this allowed me to see if ELBO method was actually correct. 
+\begin{figure}[H]
+  \includegraphics[scale=0.6]{images/PCA.png}
+  \centering
+  \caption{PCA}
+  \label{fig:PCA}
+\end{figure}
+In fact, the data are almost linearly separable.
+\subsubsection*{Preprocessing}
+I noticed that some rows on the 92nd column
+ of the dataset were filled with \textbf{?}. 
+ Obviously, this could be a problem during the 
+ training. Consequetly, I replaced these values
+  with zeros since I presumed that the values 
+  themselves were unknown and the number of these
+ occurencies was not crucial for the task. \\
+ Moreover, I converted Bs and Ss with 0s and 1s respectively to get a label number representation. \\
+ Finally, I report the correlation matrix of the dataset to see which features are more correlated with labels. 
+
+\begin{figure}[H]
+  \includegraphics[scale=0.4]{images/CORRMATRIX.png}
+  \centering
+  \caption{Correlation matrix}
+  \label{fig:corr}
+\end{figure}
+It turns out that the most correlated features are:
+'bindService', 'attachInterface', 'ServiceConnection', 'SecretKey', 'IBinder', 'android.os.IBinder', 'SUBSCRIBED\_FEEDS\_READ'\\
+
+\subsubsection*{Data Splitting}
+I decided to split the dataset in 3 parts:
+\begin{itemize}
+  \item Training set: 60 \%
+  \item Validation set: 20 \%
+  \item Test set: 20 \%
+\end{itemize}
+
+\subsubsection*{ML models}
+I have chosen 3 models:
+\begin{itemize}
+  \item Neural Networks: usually works very well for almost every task
+  \item Gaussian Naive Bayes: it is a simple model that can be used for binary classification
+  \item Decision Tree: simple and easy-readable model
+\end{itemize}
+In order to find the best hyperparameters (tuning) I wrote a function called \textit{GridSearchFun} which uses GridSearch for searching over specified parameter values for an estimator. In addition, this function returns the best estimator for each model. 
+I draw below the NN loss function 
+(both training and validation) (fig. \ref{fig:NN}).
+\begin{figure}[H]
+  \includegraphics[scale=0.6]{images/NNlossFun.png}
+  \centering
+  \caption{NN loss function}
+  \label{fig:NN}
+\end{figure}
+Since for Decision Tree and Gaussian NB there is not a training loss I used \textit{learning\_curve} that determines cross-validated training and test scores for different training set sizes. In this way it has been easier to plot and visualize how the models perform during training. \\
+The blue line represents the mean of the computed balanced accuracy. Moreover, ShuffleSplit has been used for validation scores through the mentioned sklearn learning curve. Below the final results (fig. \ref{fig:GNBloss} and fig. \ref{fig:DTloss}). 
+\begin{figure}[H]
+  \includegraphics[scale=0.6]{images/GaussianNBtrainingLoss.png}
+  \centering
+  \caption{Learning Curve Gaussian NB}
+  \label{fig:GNBloss}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[scale=0.6]{images/DTtrainingLoss.png}
+  \centering
+  \caption{Learning Curve Decision Tree}
+  \label{fig:DTloss}
+\end{figure}
+As one can see, 
+the best model is 
+the Decision Tree with a balanced 
+accuracy during training of almost 
+96\%. However, the NN seems to be the best
+ candidate during the testing. In fact, 
+ looking at the test phase the NN performs
+  very well (tab. \ref{tab:testResults}).
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Model}         & \textbf{Balanced Accuracy} & \textbf{Accuracy} \\ \hline
+  \textit{NN}            & 0.9851                     & 0.9857            \\ \hline
+  \textit{Decision Tree} & 0.9680                     & 0.9697            \\ \hline
+  \textit{Gaussian NB}   & 0.7897                     & 0.7446            \\ \hline
+  \end{tabular}
+  \caption{Test results}
+  
+  \label{tab:testResults}
+  
+  \end{table}
+Furthermore I plotted the confusion matrix to confirm visually the results I obtained. 
+\begin{figure}
+  \centering
+  \subfloat[Neural Networks]{\includegraphics[width=0.3\textwidth]{images/NNCM.png}}\hfill
+  \subfloat[Gaussian NB]{\includegraphics[width=0.3\textwidth]{images/GNBCM.png}}\hfill
+  \subfloat[Decision Tree]{\includegraphics[width=0.3\textwidth]{images/DTCMpng.png}}
+  \caption{Confusion Matrix}
+\end{figure}
 \subsection{Quality of the Dataset}
+I believe that the dataset is valuable since both NN and Decision Tree can be considered good models for this task (False Negatives). 
+Moreover with a more complex model the results could be much better, maybe reaching almost 100 percent of f1 score and balanced accuracy. 
+
+
+
 \subsection{Bypassing your Model}
+I picked up the very first sample from the test set. For each model I change every time the probability to swap 0s to 1s each feature of the sample. 
+It turns out that the best model that recognizes the sample as malicious is the decision tree. However, the probability to catch it is very low (about 40\% Accuracy). NN performs worse (about 20 \%).\\
+I changed 0s to 1s because I wanted to keep the hostile features as they were without compromising the malicious signatures or permissions.  
+In the end I successfully bypassed my models. 
 \subsection{Improving your Model}
+
 \section{Hardware Trojan Detection}
 \end{document}
+

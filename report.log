@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.6)  28 MAR 2023 17:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.6)  30 MAR 2023 14:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -509,33 +509,94 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--65
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
+Underfull \hbox (badness 10000) in paragraph at lines 77--91
 
  []
 
-
-Package caption Warning: Unused \captionsetup[sub] on input line 57.
-See the caption package documentation for explanation.
-
+<images/ELBO.png, id=6, 543.4704pt x 366.4089pt>
+File: images/ELBO.png Graphic file (type png)
+<use images/ELBO.png>
+Package pdftex.def Info: images/ELBO.png  used on input line 97.
+(pdftex.def)             Requested size: 326.08475pt x 219.84703pt.
 [1
 
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/usi_inf.png>] (./report.aux)
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/usi_inf.png>]
+<images/PCA.png, id=23, 495.0495pt x 351.2322pt>
+File: images/PCA.png Graphic file (type png)
+<use images/PCA.png>
+Package pdftex.def Info: images/PCA.png  used on input line 106.
+(pdftex.def)             Requested size: 297.03198pt x 210.74094pt.
+ [2 <./images/ELBO.png> <./images/PCA.png>]
+<images/CORRMATRIX.png, id=35, 1176.5556pt x 967.6953pt>
+File: images/CORRMATRIX.png Graphic file (type png)
+<use images/CORRMATRIX.png>
+Package pdftex.def Info: images/CORRMATRIX.png  used on input line 124.
+(pdftex.def)             Requested size: 470.6139pt x 387.07126pt.
+
+Overfull \hbox (1.14345pt too wide) in paragraph at lines 124--126
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--131
+
+ []
+
+[3 <./images/CORRMATRIX.png>]
+<images/NNlossFun.png, id=46, 497.2176pt x 351.2322pt>
+File: images/NNlossFun.png Graphic file (type png)
+<use images/NNlossFun.png>
+Package pdftex.def Info: images/NNlossFun.png  used on input line 151.
+(pdftex.def)             Requested size: 298.33286pt x 210.74094pt.
+<images/GaussianNBtrainingLoss.png, id=49, 514.5624pt x 351.2322pt>
+File: images/GaussianNBtrainingLoss.png Graphic file (type png)
+<use images/GaussianNBtrainingLoss.png>
+Package pdftex.def Info: images/GaussianNBtrainingLoss.png  used on input line 159.
+(pdftex.def)             Requested size: 308.73982pt x 210.74094pt.
+<images/DTtrainingLoss.png, id=50, 514.5624pt x 351.2322pt>
+File: images/DTtrainingLoss.png Graphic file (type png)
+<use images/DTtrainingLoss.png>
+Package pdftex.def Info: images/DTtrainingLoss.png  used on input line 165.
+(pdftex.def)             Requested size: 308.73982pt x 210.74094pt.
+ [4 <./images/NNlossFun.png> <./images/GaussianNBtrainingLoss.png>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 180.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 180.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 180.
+<images/NNCM.png, id=61, 414.1071pt x 366.4089pt>
+File: images/NNCM.png Graphic file (type png)
+<use images/NNCM.png>
+Package pdftex.def Info: images/NNCM.png  used on input line 195.
+(pdftex.def)             Requested size: 140.84256pt x 124.6221pt.
+<images/GNBCM.png, id=62, 414.1071pt x 366.4089pt>
+File: images/GNBCM.png Graphic file (type png)
+<use images/GNBCM.png>
+Package pdftex.def Info: images/GNBCM.png  used on input line 196.
+(pdftex.def)             Requested size: 140.84256pt x 124.6221pt.
+<images/DTCMpng.png, id=63, 414.1071pt x 366.4089pt>
+File: images/DTCMpng.png Graphic file (type png)
+<use images/DTCMpng.png>
+Package pdftex.def Info: images/DTCMpng.png  used on input line 197.
+(pdftex.def)             Requested size: 140.84256pt x 124.6221pt.
+ [5 <./images/NNCM.png> <./images/GNBCM.png> <./images/DTCMpng.png> <./images/DTtrainingLoss.png>] [6] (./report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 15957 strings out of 478268
- 284653 string characters out of 5846347
- 704577 words of memory out of 5000000
- 33966 multiletter control sequences out of 15000+600000
- 471956 words of font info for 37 fonts, out of 8000000 for 9000
+ 16099 strings out of 478268
+ 287493 string characters out of 5846347
+ 706577 words of memory out of 5000000
+ 34072 multiletter control sequences out of 15000+600000
+ 475390 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,5n,106p,10701b,320s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
-Output written on report.pdf (1 page, 114208 bytes).
+ 108i,9n,106p,10701b,656s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on report.pdf (6 pages, 732603 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
- 70 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 146 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 500000)
+ 115 words of extra memory for PDF output out of 10000 (max. 10000000)
 
