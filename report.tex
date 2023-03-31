@@ -209,7 +209,8 @@ It turns out that the best model that recognizes the sample as malicious is the 
 I changed 0s to 1s because I wanted to keep the hostile features as they were without compromising the malicious signatures or permissions.  
 In the end I successfully bypassed my models. 
 \subsection{Improving your Model}
-
+The first thing I have done to improve the results was semplifying the dataset by removing those features that are really correlated with others. \\
+Secondly, I used the model SVC (support vector machine for classification). It turns out that it can be very accurate on both the point of the previous exercise and the test set. It reaches a balanced accuracy of more than 97 \%. 
 \section{Hardware Trojan Detection}
 \end{document}
 
