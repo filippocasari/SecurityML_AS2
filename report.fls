@@ -867,6 +867,11 @@ INPUT ./images/DTCMpng.png
 INPUT images/DTCMpng.png
 INPUT ./images/DTCMpng.png
 INPUT ./images/DTCMpng.png
+INPUT ./images/SVCconfusionMatrix.png
+INPUT ./images/SVCconfusionMatrix.png
+INPUT images/SVCconfusionMatrix.png
+INPUT ./images/SVCconfusionMatrix.png
+INPUT ./images/SVCconfusionMatrix.png
 INPUT report.aux
 INPUT ./report.out
 INPUT ./report.out

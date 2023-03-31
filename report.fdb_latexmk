@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1680281014 "/Users/filippocasari/Dropbox/Mac/Documents/SecurityForML/AS2/report.tex" "report.pdf" "report" 1680281016
-  "/Users/filippocasari/Dropbox/Mac/Documents/SecurityForML/AS2/report.tex" 1680281014 10219 8bb3a44cc60afe0174b80a539e7dd1d3 ""
+["pdflatex"] 1680281384 "/Users/filippocasari/Dropbox/Mac/Documents/SecurityForML/AS2/report.tex" "report.pdf" "report" 1680281385
+  "/Users/filippocasari/Dropbox/Mac/Documents/SecurityForML/AS2/report.tex" 1680281382 10464 47c41764b3683d92abb6f8f4dc274da2 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -118,10 +118,11 @@
   "images/NNCM.png" 1680169698 20256 e9092fb3a3fedbe182bbffc2c1c62a85 ""
   "images/NNlossFun.png" 1680167174 23676 e5f9d13ffa9bfeaf130c18d04698f2a1 ""
   "images/PCA.png" 1680114231 70351 abdb93bf3dd7e662f492bc4ffbd059cb ""
+  "images/SVCconfusionMatrix.png" 1680281288 22066 fc815250cf2f4ad33bf86386c4031d02 ""
   "images/usi_inf.png" 1678188798 84971 bad5bb2e9098283965abf689237a1ee8 ""
-  "report.aux" 1680281016 5893 9e21de52677434fb46afb925ea12de8b "pdflatex"
+  "report.aux" 1680281385 6040 99e753f9e54cc42f38998e71a4404b4f "pdflatex"
   "report.out" 0 -1 0 "pdflatex"
-  "report.tex" 1680281014 10219 8bb3a44cc60afe0174b80a539e7dd1d3 ""
+  "report.tex" 1680281382 10464 47c41764b3683d92abb6f8f4dc274da2 ""
   (generated)
   "report.aux"
   "report.log"
